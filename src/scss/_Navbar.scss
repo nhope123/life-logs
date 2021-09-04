@@ -1,0 +1,92 @@
+@use 'custom' as cus;
+
+header{
+  @extend .container-fluid;
+  @extend .d-flex;
+  @extend .position-relative;
+  @extend .py-3;
+
+  background-color: cus.$primary;
+  color: white;
+  
+
+  nav{
+    @extend .container-lg;
+    @extend .d-flex;
+    @extend .flex-row;
+    @extend .justify-content-center;
+    @extend .justify-content-sm-between;
+    @extend .align-items-end;
+
+    .company{
+      @extend .d-block;
+      @extend .position-relative;
+
+      .logo{
+        @extend .fs-4;
+        
+      }
+      
+      span{
+        @extend .d-inline-block;
+        @extend .px-2;
+        @extend .fs-2;
+        @extend .fw-bold;
+      }
+    }
+
+    .menu{
+      @extend .d-flex;
+      @extend .flex-row;
+      @extend .justify-content-evenly;
+      @extend .align-items-end;  
+
+
+      button{
+        @extend .d-inline-block;
+        @extend .px-2;
+        @extend .rounded-pill;
+        // @extend .d-inline-block;
+        background-color: var(--bs-gray-600);
+
+        &:hover{
+          background-color: var(--bs-gray-500);
+        }
+
+      }
+      .menu-icon{
+        @extend .fs-4;
+        color: white;
+
+        &:hover{
+          color: var(--bs-red);
+        }
+      }
+      ul{
+        @extend .d-none;
+        @extend .d-sm-flex;
+        @extend .flex-row;
+        @extend .justify-content-sm-evenly;
+        @extend .align-items-end;
+        margin: 0;
+        padding: 0;
+  
+        li{
+          @extend .px-sm-2;
+          list-style-type: none;
+          @extend .fw-bold;
+        }
+  
+      }
+    }
+   
+  }
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,19 @@
+// Required bootstrap scss
+@import '../../node_modules/bootstrap/scss/functions';
+
+$bright-blue: #2196f3;
+
+
+// Default variables overrides
+$primary: $bright-blue;
+
+// Required bootstrap scss
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+@import '../../node_modules/bootstrap/scss/root';
+
+// Optional Bootstrap components
+@import '../../node_modules/bootstrap/scss/containers';
+@import '../../node_modules/bootstrap/scss/utilities';
+@import '../../node_modules/bootstrap/scss/helpers';
+@import '../../node_modules/bootstrap/scss/utilities/api';
