@@ -2,7 +2,7 @@ import React from 'react'
 import { ChevronLeft, ChevronRight } from 'react-bootstrap-icons'
 
 export const DirectionButton = props =>{
-  console.log('ej',props.callback);
+  
   return (
     <div >      
       <button type={'button'} tabIndex={'0'} onClick={(props.callback === null)? ()=>{} : props.callback} title={props.title} >
