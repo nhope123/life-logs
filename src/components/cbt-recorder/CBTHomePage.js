@@ -1,11 +1,17 @@
 import React from 'react'
-import Situation from './Situation'
+import ThoughtRecordContextProvider from '../../contexts/ThoughtRecordContext'
+import Emotions from './recordCreation/Emotions'
+import Situation from './recordCreation/Situation'
 
 const CBTHomePage = () => {
   return (
-    <section >
-      <Situation />
-    </section >
+    <ThoughtRecordContextProvider >
+      <section >
+        <Situation />
+        <Emotions />
+      </section >
+    </ThoughtRecordContextProvider>
+    
   )
 }
 
