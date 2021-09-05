@@ -21,7 +21,7 @@ const Situation = () => {
       content: null
     },
     rightButton: {
-      callback: submitSituation,
+      callback: ()=>submitSituation(),
       title: 'Go Emotion Page',
     }
   }
