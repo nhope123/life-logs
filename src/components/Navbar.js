@@ -1,5 +1,6 @@
 import React from 'react'
 import { List, Safe } from 'react-bootstrap-icons'
+import Menu from './Menu'
 
 const Navbar = () => {
   return (
@@ -12,14 +13,12 @@ const Navbar = () => {
         </div>
         {/* Navigation */}
         <div className={'menu'} >
-          <button tabIndex={'0'} type={'button'} >
+          <span className={'menu-burger'} tabIndex={'0'}  >
             <List className={'menu-icon'} aria-label={'white hamburger dropdown menu'} />
-          </button>
-          <ul >
-            <li >{'Home'}</li>
-            <li >{'Thoughts'}</li>
-          </ul>
-        </div >
+          </span >
+          <Menu menu={'dropdown'} />
+          <Menu menu={'inline'} />
+        </div >        
       </nav>
     </header>
   )

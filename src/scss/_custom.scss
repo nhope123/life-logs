@@ -2,7 +2,11 @@
 @import '../../node_modules/bootstrap/scss/functions';
 
 $bright-blue: #2196f3;
-
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
 
 // Default variables overrides
 $primary: $bright-blue;
@@ -17,3 +21,10 @@ $primary: $bright-blue;
 @import '../../node_modules/bootstrap/scss/utilities';
 @import '../../node_modules/bootstrap/scss/helpers';
 @import '../../node_modules/bootstrap/scss/utilities/api';
+
+// Custom mixins
+@mixin box-shadow($value) {
+  box-shadow: $value;
+  -webkit-box-Shadow: $value;
+  -moz-box-shadow:$value;
+}

@@ -5,16 +5,15 @@ header{
   @extend .d-flex;
   @extend .position-relative;
   @extend .py-3;
-
   background-color: cus.$primary;
-  color: white;
-  
+  color: white;margin: 0;
+  padding: 0px;  
 
   nav{
     @extend .container-lg;
     @extend .d-flex;
     @extend .flex-row;
-    @extend .justify-content-center;
+    @extend .justify-content-evenly;
     @extend .justify-content-sm-between;
     @extend .align-items-end;
 
@@ -40,53 +39,101 @@ header{
       @extend .flex-row;
       @extend .justify-content-evenly;
       @extend .align-items-end;  
-
-
-      button{
+      @extend .position-relative;
+      @extend .rounded;
+      
+      .menu-burger{
         @extend .d-inline-block;
+        @extend .d-sm-none;
         @extend .px-2;
-        @extend .rounded-pill;
-        // @extend .d-inline-block;
+        @extend .rounded;
+        @extend .py-1;
         background-color: var(--bs-gray-600);
-
-        &:hover{
-          background-color: var(--bs-gray-500);
-        }
-
-      }
-      .menu-icon{
-        @extend .fs-4;
+        @extend .border-white;
+        @extend .border;
         color: white;
+        cursor: pointer;
 
         &:hover{
-          color: var(--bs-red);
+          background-color: white;
+          color: cus.$primary;
         }
+
+        .menu-icon{
+          @extend .fs-4;          
+        }margin: 0;
+        padding: 0px;
       }
-      ul{
+      
+      &:hover > .vertical-menu{
+        @extend .d-flex;
+        @extend .d-sm-none;
+      }
+
+      .vertical-menu{
         @extend .d-none;
+        @extend .d-sm-none;
+        @extend .flex-column;
+        @extend .justify-content-start;
+        @extend .align-items-start;
+        @extend .position-absolute;
+        @extend .p-0;
+        @extend .m-0;
+        @include cus.box-shadow(0 2px 6px rgba(0,0,0,0.3));margin: 0;
+        padding: 0px;
+        top: 30px;
+        right: 0px;
+        min-width: 120px;   
+        background-color: #55aef6;
+        border-radius: 8px;
+          
+        li{
+          @extend .position-relative;
+          @extend .rounded;
+          width: 100%;
+          padding: 5px 10px;
+          list-style-type: none;
+          border-bottom: 1px solid var(--bs-gray-400);
+          cursor: pointer;
+          background-color: #55aef6;
+          color: black;
+          font-weight: 400;
+        }
+
+        li:hover{
+          background-color: #86c5f9;
+          font-weight: 500;          
+        }  
+      }
+
+      .horizontal-menu{      
+        @extend .d-none;  
         @extend .d-sm-flex;
-        @extend .flex-row;
-        @extend .justify-content-sm-evenly;
+        @extend .flex-sm-row;
         @extend .align-items-end;
+        @extend .justify-content-evenly;
+        @extend .position-relative;
         margin: 0;
         padding: 0;
-  
+
         li{
           @extend .px-sm-2;
           list-style-type: none;
           @extend .fw-bold;
         }
-  
+
       }
     }
    
   }
+}
 
+@media screen and (min-width: cus.$breakpoint-sm) {
+  .menu{
 
-
-
-
-
-
-
+    ul{
+      position: relative;
+      top: 0px;
+    }
+  }
 }
