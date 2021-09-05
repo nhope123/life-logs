@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { ThoughtRecordContext } from '../../../contexts/ThoughtRecordContext'
 import NavigationButton from './NavigationButton'
+import {v4 as uuidv4} from 'uuid'
 
 const AutomaticThoughts = () => {
   const {emotion, setAutomaticThoughts} = useContext(ThoughtRecordContext)
@@ -8,12 +9,16 @@ const AutomaticThoughts = () => {
   const [rate, setRate] = useState('50')
   const [thoughts, setThoughts] = useState([])
 
-
   const updatethoughts = event =>{
     event.preventDefault()
-    setThoughts([...thoughts,{thought: thoughtInput, rate}])
+    setThoughts([...thoughts,{id: uuidv4() ,thought: thoughtInput, rate}])
     setThoughtInput('')
     setRate('50')
+  }
+
+  const processThoughts = () =>{
+    // Filter out the max rate thought
+    setAutomaticThoughts(thoughts)
   }
 
   const directionProps ={
@@ -22,7 +27,7 @@ const AutomaticThoughts = () => {
       title: 'Go Back to Emotion'
     },
     rightButton: {
-      callback: ()=>setAutomaticThoughts(thoughts),
+      callback: ()=>processThoughts(),
       title: 'Go To Evidence',
     }
   }
