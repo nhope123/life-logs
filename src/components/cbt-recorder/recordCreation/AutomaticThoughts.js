@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { ThoughtRecordContext } from '../../../contexts/ThoughtRecordContext'
 import NavigationButton from './NavigationButton'
 import {v4 as uuidv4} from 'uuid'
@@ -9,7 +9,7 @@ const AutomaticThoughts = () => {
   const [thoughtInput, setThoughtInput] = useState('')
   const [rate, setRate] = useState('50')
   const [thoughts, setThoughts] = useState([])
-  let tableProps = {columns: ['Automatic Thought', 'Intensity', ' '], rows: []}
+  let tableProps = {columns: ['Automatic Thought', 'Intensity', ' '], rows: [...thoughts]}
 
   const updatethoughts = event =>{
     event.preventDefault()
@@ -24,7 +24,7 @@ const AutomaticThoughts = () => {
       setAutomaticThoughts(thoughts[0])
     }
     else if(thoughts.length >= 2){
-      setAutomaticThoughts(thoughts.sort((a,b)=>b.rate - a.rate)[0])
+      setAutomaticThoughts(thoughts.sort((a,b)=>b.rate - a.rate)[0].thought)
     }    
   }
 
@@ -38,10 +38,7 @@ const AutomaticThoughts = () => {
       title: 'Go To Evidence',
     }
   }
-  useEffect(() => {
-    tableProps.rows = [...thoughts]
-  }, [thoughts, tableProps])
-
+  
   return (
     <section >
       <div >

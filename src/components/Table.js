@@ -18,6 +18,7 @@ const Table = (props) => {
         <tbody >
           {
             props.rows.map((row,index)=>{
+              
               return <tr key={`row ${index }`}>
                 {
                   row.map((cell,cellCount)=> ( <td key={`cell ${(index + 1) * cellCount}`} >{cell}</td> ))
