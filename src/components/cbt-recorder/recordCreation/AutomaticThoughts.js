@@ -1,30 +1,45 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState} from 'react'
 import { ThoughtRecordContext } from '../../../contexts/ThoughtRecordContext'
 import NavigationButton from './NavigationButton'
 import {v4 as uuidv4} from 'uuid'
 import Table from '../../Table'
+import { XSquare } from 'react-bootstrap-icons'
 
 const AutomaticThoughts = () => {
   const {emotion, setAutomaticThoughts} = useContext(ThoughtRecordContext)
+
   const [thoughtInput, setThoughtInput] = useState('')
   const [rate, setRate] = useState('50')
   const [thoughts, setThoughts] = useState([])
-  let tableProps = {columns: ['Automatic Thought', 'Intensity', ' '], rows: [...thoughts]}
+
+
+  let tableProps = {columns: ['Thought', 'Intensity', 'action'], rows: [...thoughts]}
+
+ 
 
   const updatethoughts = event =>{
     event.preventDefault()
-    setThoughts([...thoughts,{id: uuidv4() ,thought: thoughtInput, rate}])
+    const id = uuidv4()
+    
+    setThoughts([...thoughts,{
+                              id, 
+                              'Thought': thoughtInput, 
+                              'Intensity': rate, 
+                              'action': {callback: removeThought, symbol: <XSquare /> }
+                            }])
     setThoughtInput('')
     setRate('50')
+    //console.log(thoughts);
   }
 
   const processThoughts = () =>{
     // Filter out the max rate thought
+    console.log(thoughts);
     if(thoughts.length === 1){
-      setAutomaticThoughts(thoughts[0])
+      setAutomaticThoughts(thoughts[0]['Thought'])
     }
     else if(thoughts.length >= 2){
-      setAutomaticThoughts(thoughts.sort((a,b)=>b.rate - a.rate)[0].thought)
+      setAutomaticThoughts(thoughts.sort((a,b)=>b.Intensity - a.Intensity)[0]['Thought'])
     }    
   }
 
@@ -38,7 +53,13 @@ const AutomaticThoughts = () => {
       title: 'Go To Evidence',
     }
   }
+
+  const removeThought = id =>{
+   setThoughts(state=> state.filter(item=> item.id !== id))
+  }
   
+  
+
   return (
     <section >
       <div >
