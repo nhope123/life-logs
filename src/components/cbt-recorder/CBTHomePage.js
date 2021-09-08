@@ -1,4 +1,5 @@
 import React from 'react'
+
 import ThoughtRecordContextProvider from '../../contexts/ThoughtRecordContext'
 import AlternateThoughts from './recordCreation/AlternateThoughts'
 import AutomaticThoughts from './recordCreation/AutomaticThoughts'

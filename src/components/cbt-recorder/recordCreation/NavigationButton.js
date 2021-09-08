@@ -1,22 +1,5 @@
 import React from 'react'
-import { ChevronLeft, ChevronRight } from 'react-bootstrap-icons'
-
-export const DirectionButton = props =>{
-  
-  return (
-    <div >      
-      <button type={'button'} tabIndex={'0'} onClick={(props.callback === null)? ()=>{} : props.callback} title={props.title} >
-        {
-          (props.content === 'Back')?<ChevronLeft /> :''
-        }
-        {props.content}
-        {
-          (props.content !== 'Back')? <ChevronRight /> :''
-        }
-      </button>
-    </div>
-  )
-}
+import DirectionButton from './DirectionButton'
 
 const NavigationButton = props => {
   return (

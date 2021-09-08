@@ -8,7 +8,6 @@ const Situation = () => {
   const {setSituation} = useContext(ThoughtRecordContext)
  
   const submitSituation = () =>{
-    console.log('submit');
     if(input.length > 1){
       setSituation(input)
       setInput('')
@@ -16,15 +15,8 @@ const Situation = () => {
   }
 
   const directionProps ={
-    leftButton: {
-      callback: null,
-      title: null,
-      content: null
-    },
-    rightButton: {
-      callback: ()=>submitSituation(),
-      title: 'Go Emotion Page',
-    }
+    leftButton: { callback: null, title: null, content: null },
+    rightButton: { callback: ()=>submitSituation(), title: 'Go Emotion Page' }
   }
 
   return (
@@ -36,10 +28,7 @@ const Situation = () => {
       </div>
       <div >
         <SingleInputForm {...{label: 'Situation', callback: setInput, count: false}} />
-       {/* <input type={'text'} tabIndex={'0'} value={input} placeholder={'Situation'} 
-               onChange={event => setInput(event.target.value)}  required /> */}
       </div>
-      {/* Bug: situation context value not updating */}
       <NavigationButton {...directionProps} />      
     </section >
   )

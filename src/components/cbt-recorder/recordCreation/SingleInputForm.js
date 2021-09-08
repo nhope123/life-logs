@@ -7,11 +7,14 @@ import React, { useState } from 'react'
  * @param {boolean} props.count - If true rate is required 
  * @param {Function} props.callback - Function to pass input to parent  component
  */
-
 const SingleInputForm = (props) => {
   const [textInput, setTextInput] = useState('')
   const [rate, setRate] = useState('50')
 
+  /**
+   * 
+   * @param {object} event - Form event property
+   */
   const submitInput = (event) =>{
     event.preventDefault()
     props.count ? props.callback([textInput,rate]) :  props.callback(textInput)
