@@ -1,5 +1,6 @@
 import React from 'react'
 import ThoughtRecordContextProvider from '../../contexts/ThoughtRecordContext'
+import AlternateThoughts from './recordCreation/AlternateThoughts'
 import AutomaticThoughts from './recordCreation/AutomaticThoughts'
 import Emotions from './recordCreation/Emotions'
 import Evidence from './recordCreation/Evidence'
@@ -11,8 +12,9 @@ const CBTHomePage = () => {
       <section >
         {/*<Situation />
         <Emotions />
-        <AutomaticThoughts /> */}
-        <Evidence />
+        <AutomaticThoughts /> 
+       {/* <Evidence />*/}
+        <AlternateThoughts />
       </section >
     </ThoughtRecordContextProvider>
     

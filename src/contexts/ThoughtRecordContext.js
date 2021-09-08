@@ -7,7 +7,7 @@ const testEvidence = [['rest','well'],['djd','dsjhd'],['hdh','hdsj']]
 const ThoughtRecordContextProvider = (props) => {
   const [situation, setSituation] = useState('')
   const [emotion, setEmotion] = useState('Feeling Sad')
-  const [automaticThoughts, setAutomaticThoughts] = useState('')
+  const [automaticThoughts, setAutomaticThoughts] = useState('feeling sad')
   const [evidence, setEvidence] = useState(testEvidence)
 
   return (

@@ -4,16 +4,17 @@ import React, { useState } from 'react'
  * 
  * @param {object} props - Component properties 
  * @param {string} props.label - Input label
+ * @param {boolean} props.count - If true rate is required 
  * @param {Function} props.callback - Function to pass input to parent  component
  */
 
 const SingleInputForm = (props) => {
   const [textInput, setTextInput] = useState('')
+  const [rate, setRate] = useState('50')
 
   const submitInput = (event) =>{
     event.preventDefault()
-    //console.log(textInput);
-    props.callback(textInput)
+    props.count ? props.callback([textInput,rate]) :  props.callback(textInput)
     setTextInput('')    
   }
     
@@ -25,6 +26,10 @@ const SingleInputForm = (props) => {
                 onChange={(event)=>{(event.target.value.length <= 100) && 
                                       setTextInput(event.target.value) 
                                     }}  />
+      {
+        props.count && (<input type={'number'} min={'0'} max={'100'} tabIndex={'0'} value={rate} step={'5'}
+                             onChange={event => setRate(event.target.value)} />) 
+      }                              
       <input type={'submit'} tabIndex={'0'} value={'Add'}/>
     </form >
   )

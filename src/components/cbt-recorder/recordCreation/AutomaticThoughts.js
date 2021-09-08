@@ -4,32 +4,23 @@ import NavigationButton from './NavigationButton'
 import {v4 as uuidv4} from 'uuid'
 import Table from '../../Table'
 import { XSquare } from 'react-bootstrap-icons'
+import SingleInputForm from './SingleInputForm'
 
 const AutomaticThoughts = () => {
   const {emotion, setAutomaticThoughts} = useContext(ThoughtRecordContext)
-
-  const [thoughtInput, setThoughtInput] = useState('')
-  const [rate, setRate] = useState('50')
   const [thoughts, setThoughts] = useState([])
-
 
   let tableProps = {columns: ['Thought', 'Intensity', 'action'], rows: [...thoughts]}
 
  
 
-  const updatethoughts = event =>{
-    event.preventDefault()
-    const id = uuidv4()
-    
+  const updatethoughts = value =>{    
     setThoughts([...thoughts,{
-                              id, 
-                              'Thought': thoughtInput, 
-                              'Intensity': rate, 
+                              id: uuidv4(), 
+                              'Thought': value[0], 
+                              'Intensity': value[1], 
                               'action': {callback: removeThought, symbol: <XSquare /> }
                             }])
-    setThoughtInput('')
-    setRate('50')
-    //console.log(thoughts);
   }
 
   const processThoughts = () =>{
@@ -68,13 +59,7 @@ const AutomaticThoughts = () => {
       {/*  Require table */}
       <Table {...tableProps} />
       <div >
-        <form onSubmit={event =>updatethoughts(event)}>
-          <textarea tabIndex={'0'} value={thoughtInput} onChange={event => setThoughtInput(event.target.value)}
-                    required placeholder={'What are you thinking?'} />
-          <input type={'number'} min={'0'} max={'100'} tabIndex={'0'} value={rate} step={'5'}
-                 onChange={event => setRate(event.target.value)} />
-          <input type={'submit'} tabIndex={'0'} value={'OK'} />
-        </form>
+        <SingleInputForm {...{label: 'Thoughts',callback: updatethoughts, count: true}} />
       </div>
       <NavigationButton {...directionProps} />
     </section >

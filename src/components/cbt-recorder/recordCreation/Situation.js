@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { ThoughtRecordContext } from '../../../contexts/ThoughtRecordContext'
 import NavigationButton from './NavigationButton'
+import SingleInputForm from './SingleInputForm'
 
 const Situation = () => {
   const [input, setInput] = useState('')
@@ -34,8 +35,9 @@ const Situation = () => {
         </p>
       </div>
       <div >
-        <input type={'text'} tabIndex={'0'} value={input} placeholder={'Situation'} 
-               onChange={event => setInput(event.target.value)}  required />
+        <SingleInputForm {...{label: 'Situation', callback: setInput, count: false}} />
+       {/* <input type={'text'} tabIndex={'0'} value={input} placeholder={'Situation'} 
+               onChange={event => setInput(event.target.value)}  required /> */}
       </div>
       {/* Bug: situation context value not updating */}
       <NavigationButton {...directionProps} />      
