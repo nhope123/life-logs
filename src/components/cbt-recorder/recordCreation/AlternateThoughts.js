@@ -6,12 +6,17 @@ import Table from '../../Table'
 import SingleInputForm from './SingleInputForm'
 import NavigationButton from './NavigationButton'
 import ActiveTableCell from '../../ActiveTableCell'
+import ThoughtSubmission from '../RecordPreview'
 
 const COLUMNS =['Evidence For','Evidence Against','Alternate Thought']
 
+// devops
+const testAlt = [{id: 1, thought: 'I am happy now'},{id:2,thought: 'Love is in the air'}]
+
 const AlternateThoughts = () => {
   const {evidence, automaticThoughts, setAlternateThought} = useContext(ThoughtRecordContext)
-  const [thoughtList, setThoughtList] = useState([])
+  const [thoughtList, setThoughtList] = useState(testAlt)
+  const [isModalOpen, setIsModalOpen] = useState(true)
 
   const updateThoughtList = value => {
     setThoughtList(state => [...state,{id: uuidv4(), thought: value }])
@@ -21,6 +26,11 @@ const AlternateThoughts = () => {
     setThoughtList(state=> state.filter(item => item.id !== id))
   }
   
+  const openModal = () =>{
+    setAlternateThought(thoughtList)
+    setIsModalOpen(state =>!state)
+  }
+
   const processAlternatives = () =>{
     let evidenceLength = evidence.length
     let alternateLength = thoughtList.length
@@ -47,18 +57,18 @@ const AlternateThoughts = () => {
 
   const directionProps = {
     leftButton: { callback: null, title: 'Go Back to Evidence' },
-    rightButton: { callback: ()=> (thoughtList.length >= 1)? setAlternateThought(thoughtList): {}, title: 'Preview Record', }
+    rightButton: { callback: ()=> (thoughtList.length >= 1)? openModal(): {}, title: 'Preview Record', }
   }
 
   return (
-    <section >
+    <section style={{zIndex:2}} >
       <div >
         <p >{automaticThoughts}</p>
       </div>
       <Table {...tableProps} /> 
       <SingleInputForm {...{label:'Alternate Thought',callback: updateThoughtList, count: false}} />
       <NavigationButton {...directionProps} />
-      
+      <ThoughtSubmission {...{isOpen: isModalOpen, callback: ()=>setIsModalOpen(!isModalOpen)}} />
     </section >
   )
 }

@@ -18,6 +18,8 @@
     "react-router": "^5.2.1",
     "react-scripts": "4.0.3",
     "sass": "^1.39.0",
+    "styled-components": "^5.3.1",
+    "styled-react-modal": "^2.1.0",
     "uuid": "^8.3.2",
     "web-vitals": "^1.1.2"
   },
