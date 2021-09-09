@@ -1,14 +1,14 @@
 import React, { useContext } from 'react'
 
-import { ThoughtRecordContext } from '../../../contexts/ThoughtRecordContext'
-import NavigationButton from './NavigationButton'
+import { ThoughtRecordContext } from '../contexts/ThoughtRecordContext'
 
-import sad from '../../../assets/images/sad-emoji.png'
-import afraid from '../../../assets/images/afraid-emoji.png'
-import angry from '../../../assets/images/angry-emoji.png'
-import disgust from '../../../assets/images/disgust-emoji.png'
-import happy from '../../../assets/images/happy-emoji.png'
-import surprise from '../../../assets/images/surprise-emoji.png'
+import sad from '../assets/images/sad-emoji.png'
+import afraid from '../assets/images/afraid-emoji.png'
+import angry from '../assets/images/angry-emoji.png'
+import disgust from '../assets/images/disgust-emoji.png'
+import happy from '../assets/images/happy-emoji.png'
+import surprise from '../assets/images/surprise-emoji.png'
+import BackForwardNavigation from '../../auxiliary/BackForwardNavigation'
 
 const choices = [
   {src: sad, alt: 'round yellow face emoji with dark blue eyes and a frown', title:'Feeling Sad' },
@@ -65,7 +65,7 @@ const Emotions = () => {
           })
         }
       </div>
-      <NavigationButton {...directionProps} />      
+      <BackForwardNavigation {...directionProps} />      
     </section >
   )
 }

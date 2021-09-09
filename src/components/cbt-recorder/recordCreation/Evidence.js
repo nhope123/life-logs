@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react'
 import {v4 as uuidv4} from 'uuid'
 
-import { ThoughtRecordContext } from '../../../contexts/ThoughtRecordContext'
-import Table from '../../Table'
-import SingleInputForm from './SingleInputForm'
-import NavigationButton from './NavigationButton'
-import ActiveTableCell from '../../ActiveTableCell'
+import { ThoughtRecordContext } from '../contexts/ThoughtRecordContext'
+import Table from '../../auxiliary/Table'
+import SingleInputForm from '../../auxiliary/SingleInputForm'
+import ActiveTableCell from '../../auxiliary/ActiveTableCell'
+import BackForwardNavigation from '../../auxiliary/BackForwardNavigation'
 
 const EVIDENCE_FOR = 'This is true because:'
 const EVIDENCE_AGAINST = 'This is untrue because:'
@@ -98,7 +98,7 @@ const Evidence = () => {
       <Table {...tableProps} /> 
       <SingleInputForm {...{label: 'Statement that proves the title',callback: addEvidenceFor,count: false }}/>
       <SingleInputForm {...{label: 'Statement that disproves the title',callback: addEvidenceAgainst,count:false }} />
-      <NavigationButton {...directionProps} />
+      <BackForwardNavigation {...directionProps} />
     </section >
   )
 }

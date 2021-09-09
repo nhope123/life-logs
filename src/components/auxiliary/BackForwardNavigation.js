@@ -1,7 +1,7 @@
 import React from 'react'
 import DirectionButton from './DirectionButton'
 
-const NavigationButton = props => {
+const BackForwardNavigation = props => {
   return (
     <div >
       {
@@ -14,4 +14,4 @@ const NavigationButton = props => {
   )
 }
 
-export default NavigationButton
+export default BackForwardNavigation

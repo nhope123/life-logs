@@ -2,10 +2,10 @@ import React, { useContext, useState} from 'react'
 import {v4 as uuidv4} from 'uuid'
 import { XSquare } from 'react-bootstrap-icons'
 
-import SingleInputForm from './SingleInputForm'
-import { ThoughtRecordContext } from '../../../contexts/ThoughtRecordContext'
-import Table from '../../Table'
-import NavigationButton from './NavigationButton'
+import SingleInputForm from '../../auxiliary/SingleInputForm'
+import { ThoughtRecordContext } from '../contexts/ThoughtRecordContext'
+import Table from '../../auxiliary/Table'
+import BackForwardNavigation from '../../auxiliary/BackForwardNavigation'
 
 const AutomaticThoughts = () => {
   const {emotion, setAutomaticThoughts} = useContext(ThoughtRecordContext)
@@ -61,7 +61,7 @@ const AutomaticThoughts = () => {
       <div >
         <SingleInputForm {...{label: 'Thoughts',callback: updatethoughts, count: true}} />
       </div>
-      <NavigationButton {...directionProps} />
+      <BackForwardNavigation {...directionProps} />
     </section >
   )
 }

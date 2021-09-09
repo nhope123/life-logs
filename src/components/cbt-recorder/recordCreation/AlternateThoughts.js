@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
-import { ThoughtRecordContext } from '../../../contexts/ThoughtRecordContext'
-import Table from '../../Table'
-import SingleInputForm from './SingleInputForm'
-import NavigationButton from './NavigationButton'
-import ActiveTableCell from '../../ActiveTableCell'
+import { ThoughtRecordContext } from '../contexts/ThoughtRecordContext'
+import Table from '../../auxiliary/Table'
+import SingleInputForm from '../../auxiliary/SingleInputForm'
+import ActiveTableCell from '../../auxiliary/ActiveTableCell'
 import ThoughtSubmission from '../RecordPreview'
+import BackForwardNavigation from '../../auxiliary/BackForwardNavigation'
 
 const COLUMNS =['Evidence For','Evidence Against','Alternate Thought']
 
@@ -67,7 +67,7 @@ const AlternateThoughts = () => {
       </div>
       <Table {...tableProps} /> 
       <SingleInputForm {...{label:'Alternate Thought',callback: updateThoughtList, count: false}} />
-      <NavigationButton {...directionProps} />
+      <BackForwardNavigation {...directionProps} />
       <ThoughtSubmission {...{isOpen: isModalOpen, callback: ()=>setIsModalOpen(!isModalOpen)}} />
     </section >
   )

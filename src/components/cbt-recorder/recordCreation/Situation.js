@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
-import { ThoughtRecordContext } from '../../../contexts/ThoughtRecordContext'
-import NavigationButton from './NavigationButton'
-import SingleInputForm from './SingleInputForm'
+import { ThoughtRecordContext } from '../contexts/ThoughtRecordContext'
+import SingleInputForm from '../../auxiliary/SingleInputForm'
+import BackForwardNavigation from '../../auxiliary/BackForwardNavigation'
 
 const Situation = () => {
   const [input, setInput] = useState('')
@@ -29,7 +29,7 @@ const Situation = () => {
       <div >
         <SingleInputForm {...{label: 'Situation', callback: setInput, count: false}} />
       </div>
-      <NavigationButton {...directionProps} />      
+      <BackForwardNavigation {...directionProps} />      
     </section >
   )
 }

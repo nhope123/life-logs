@@ -5,7 +5,7 @@ import CBTHomePage from './cbt-recorder/CBTHomePage'
 const Main = () => {
   return (
     <main >
-     {/* <CBTHomePage /> */}
+      <CBTHomePage />
     </main >
   )
 }

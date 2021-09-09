@@ -1,6 +1,6 @@
 import React from 'react'
 import { List, Safe } from 'react-bootstrap-icons'
-import Menu from './Menu'
+import Menu from './auxiliary/Menu'
 
 const Navbar = () => {
   return (

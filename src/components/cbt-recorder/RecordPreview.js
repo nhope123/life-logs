@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import Modal from 'styled-react-modal'
 //import styled from 'styled-components'
-import { ThoughtRecordContext } from '../../contexts/ThoughtRecordContext'
-import NavigationButton from './recordCreation/NavigationButton'
+import { ThoughtRecordContext } from './contexts/ThoughtRecordContext'
+import BackForwardNavigation from '../auxiliary/BackForwardNavigation'
 
 const StyledModal = Modal.styled`
   min-width: 90%;
@@ -67,7 +67,7 @@ const ThoughtSubmission = (props) => {
           }
         </ul>
       </div>
-      <NavigationButton {...directionProps} />
+      <BackForwardNavigation {...directionProps} />
     </StyledModal >
   )
 }

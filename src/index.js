@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 
-import './scss/index.scss'
+import './components/scss/index.scss'
 import App from './components/App'
 import reportWebVitals from './reportWebVitals'
 import {ModalProvider} from 'styled-react-modal'

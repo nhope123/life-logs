@@ -5,11 +5,10 @@ header{
   @extend .d-flex;
   @extend .fixed-top;
   @extend .py-3;
-  //top: 0;
-  //left: 0;
   background-color: cus.$primary;
   color: white;margin: 0;
   padding: 0px;  
+  z-index: cus.$nav-zindex;
 
   nav{
     @extend .container-lg;
