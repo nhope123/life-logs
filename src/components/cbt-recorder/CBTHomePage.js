@@ -10,7 +10,7 @@ import Situation from './recordCreation/Situation'
 const CBTHomePage = () => {
   return (
     <ThoughtRecordContextProvider >
-      <section >
+      <section title={'cbt home page'} >
         {/*<Situation />
         <Emotions />
         <AutomaticThoughts /> 

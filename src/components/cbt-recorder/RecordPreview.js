@@ -67,7 +67,7 @@ const ThoughtSubmission = (props) => {
           }
         </ul>
       </div>
-      <NavigationButton {...{directionProps}} />
+      <NavigationButton {...directionProps} />
     </StyledModal >
   )
 }

@@ -16,7 +16,7 @@ const testAlt = [{id: 1, thought: 'I am happy now'},{id:2,thought: 'Love is in t
 const AlternateThoughts = () => {
   const {evidence, automaticThoughts, setAlternateThought} = useContext(ThoughtRecordContext)
   const [thoughtList, setThoughtList] = useState(testAlt)
-  const [isModalOpen, setIsModalOpen] = useState(true)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const updateThoughtList = value => {
     setThoughtList(state => [...state,{id: uuidv4(), thought: value }])
