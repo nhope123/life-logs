@@ -2,12 +2,12 @@ import React from 'react'
 import CBTHomePage from './cbt-recorder/CBTHomePage'
 
 
-const Main = () => {
+const CBTThoughtRecord = () => {
   return (
-    <main >
+    <section >
       <CBTHomePage />
-    </main >
+    </section >
   )
 }
 
-export default Main
+export default CBTThoughtRecord

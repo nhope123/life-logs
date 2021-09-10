@@ -1,5 +1,6 @@
 import React from 'react'
 import { List, Safe } from 'react-bootstrap-icons'
+import { Link } from 'react-router-dom'
 import Menu from './auxiliary/Menu'
 
 const Navbar = () => {
@@ -7,10 +8,12 @@ const Navbar = () => {
     <header >
       <nav >
         {/* Company name and logo */}
-        <div className={'company'}>
-          <Safe className={'logo'} aria-label={'colored security safe'} />
-          <span >{'Life Logs'}</span>
-        </div>
+        <Link to={'/'} >
+          <div className={'company'} title={'Go To Home page'}>            
+            <Safe className={'logo'} aria-label={'colored security safe'} />
+            <span >{'Life Logs'}</span>            
+          </div>
+        </Link>
         {/* Navigation */}
         <div className={'menu'} >
           <span className={'menu-burger'} tabIndex={'0'}  >

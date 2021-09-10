@@ -1,14 +1,18 @@
 import React from 'react';
-import Main from './Main';
+import HomePage from './HomePage';
+import CBTThoughtRecord from './CBTThoughtRecord';
 import Navbar from './Navbar';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 const App = () => {
   return (
-    <div className="App">
-      <Navbar />
-      <Main />
-      
-    </div>
+    <main className="App">
+      <Router >
+        <Navbar />
+        <Route path={'/'} exact component={HomePage} />
+        <Route path={'/thought-record/'} exact component={CBTThoughtRecord} />
+      </Router >
+    </main>
   );
 }
 
