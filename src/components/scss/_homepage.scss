@@ -1,19 +1,7 @@
 @use './custom' as cus;
 
-section{
-  @extend .d-block;
-  @extend .position-relative;
-  @extend .w-100;
-  min-height:calc(100vh - 70px);
-
-  & + div{ 
-    @extend .d-flex;
-    @extend .position-relative;
-    @extend .flex-row;
-    @extend .justify-content-center;
-    @extend .align-items-center;
-    @extend .w-100;
-    //@extend .h-100;
-    height: 100%;
-   }
-}
+#app-homepage{
+    @include cus.flex-layout;
+    @include cus.section-layout-dimension;
+  }
+  

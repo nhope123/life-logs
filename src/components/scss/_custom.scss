@@ -9,6 +9,7 @@ $breakpoint-xl: 1200px;
 $breakpoint-xxl: 1400px;
 
 $nav-zindex: 20;
+$doc-icon-size: 3vw;
 
 // Default variables overrides
 $primary: $bright-blue;
@@ -29,4 +30,23 @@ $primary: $bright-blue;
   box-shadow: $value;
   -webkit-box-Shadow: $value;
   -moz-box-shadow:$value;
+}
+
+@mixin flex-layout($position: relative ,$direction:row, $justify:center, $align: center){
+  @extend .d-flex;
+  @extend .position-#{$position};  
+  @extend .flex-#{$direction};
+  @extend .justify-content-#{$justify};
+  @extend .align-items-#{$align};
+
+}
+
+@mixin section-layout-dimension {
+  @extend .w-100;
+  min-height:calc(100vh - 70px);
+}
+
+@mixin dimension($width:auto, $height:auto) {
+  width: $width;
+  height: $height;
 }

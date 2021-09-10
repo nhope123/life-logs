@@ -1,0 +1,45 @@
+@use '../../scss/custom' as cus;
+
+
+#thought-home{
+  @include cus.flex-layout($direction:column,$justify:start);
+  @include cus.section-layout-dimension;
+  @extend .container-lg;
+  @extend .p-sm-3; 
+
+  .title{
+    @include cus.flex-layout;
+    @include cus.dimension(100%);
+
+    #create-thought{
+      @extend .d-block;
+      @extend .position-absolute;
+      top: 0px;
+      right: 3%;
+
+      .create-icon{
+        @include cus.dimension($height: cus.$doc-icon-size);
+        max-width: 32px;
+        max-height: 33px;
+        min-width: 26px;
+        min-height: 26px;
+        color: cus.$success;
+
+        &:hover{
+          color: cus.$primary;
+          transform: scale(1.1);
+        }
+        &:active{
+          color: cus.$primary;
+          transform: scale(0.9);
+        }
+      }
+    }
+  }
+
+  .thought-list{
+    @include cus.flex-layout($align:start);
+    @extend .flex-wrap;
+    @include cus.dimension(100%);
+  }
+}

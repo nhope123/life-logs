@@ -1,12 +1,13 @@
 import React from 'react'
-import CBTHomePage from './cbt-recorder/CBTHomePage'
+import ThoughtRecordContextProvider from './cbt-recorder/contexts/ThoughtRecordContext'
+import ThoughtHome from './cbt-recorder/ThoughtHome'
 
 
 const CBTThoughtRecord = () => {
   return (
-    <section >
-      <CBTHomePage />
-    </section >
+    <ThoughtRecordContextProvider >
+      <ThoughtHome />
+    </ThoughtRecordContextProvider>
   )
 }
 
