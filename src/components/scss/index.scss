@@ -3,6 +3,7 @@
 @use './main';
 @use './homepage';
 @use '../cbt-recorder/scss/style';
+@use  '../auxiliary/scss/styles.scss';
 
 *{
   box-sizing: border-box;

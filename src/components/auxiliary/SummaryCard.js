@@ -1,13 +1,14 @@
 import React from 'react'
 
 const SummaryCard = (props) => {
+  const capitalize = aString => aString[0].toUpperCase().concat(aString.slice(1))
   return (
     <div className={'summary-card'}>
-      <div >{props.title}</div>
+      <h3 className={'title'} >{capitalize(props.title)}</h3>
       <div >
-        <p >{props.content}</p>
+        <p >{capitalize(props.content)}</p>
       </div>
-      <div >{props.date}</div>
+      <div className={'date'} >{props.date}</div>
     </div>
   )
 }

@@ -38,8 +38,9 @@
   }
 
   .thought-list{
-    @include cus.flex-layout($align:start);
+    @include cus.flex-layout($justify: evenly,$align:start);
     @extend .flex-wrap;
     @include cus.dimension(100%);
+    
   }
 }

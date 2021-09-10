@@ -41,12 +41,12 @@ $primary: $bright-blue;
 
 }
 
-@mixin section-layout-dimension {
+@mixin section-layout-dimension{
   @extend .w-100;
   min-height:calc(100vh - 70px);
 }
 
-@mixin dimension($width:auto, $height:auto) {
+@mixin dimension($width:auto, $height:auto){
   width: $width;
   height: $height;
 }

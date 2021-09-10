@@ -1,0 +1,23 @@
+@use '../../scss/custom' as cus;
+
+.summary-card{
+  @include cus.flex-layout( $direction: column, $justify: around );
+  @include cus.dimension(150px,95px);
+  @extend .p-2;
+  border-radius: 10px;
+  background-color: rgba(#2196f3, 0.3);
+  margin: 8px;
+  //padding: ;
+  .title{
+    font-size: 1.071rem;
+    font-weight: bold;
+    @extend p;
+  }
+  p{
+    @extend .text-truncate;
+    margin: 0;
+  }
+  .date{
+     font-size: 12px;
+   }
+}
