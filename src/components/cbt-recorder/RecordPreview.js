@@ -36,7 +36,7 @@ const PreviewBlock = props =>{
  * @param {Function}  props.callback - The callback the handles Modal closing
  * @returns 
  */
-const ThoughtSubmission = (props) => {
+const RecordPreview = (props) => {
   const {
           situation,
           emotion,
@@ -72,4 +72,4 @@ const ThoughtSubmission = (props) => {
   )
 }
 
-export default ThoughtSubmission
+export default RecordPreview

@@ -86,8 +86,16 @@ const Evidence = () => {
   let tableProps = {columns: [EVIDENCE_FOR, EVIDENCE_AGAINST], rows: processEvidence('table')}
   
   const directionProps ={
-    leftButton: { callback: null, title: 'Go Back to Automatic Thought' },
-    rightButton: { callback: ()=>updateEvidence(), title: 'Go To Alternate Thought' }
+    leftButton: { 
+                  callback: null, 
+                  title: 'Go Back to Automatic Thought',
+                  url: '/thought-record/create/automatic-thought' 
+                },
+    rightButton: { 
+                  callback: ()=>updateEvidence(), 
+                  title: 'Go To Alternate Thought',
+                  url: '/thought-record/create/alternate-thoughts' 
+                }
   }
 
   return (

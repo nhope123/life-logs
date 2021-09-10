@@ -16,7 +16,11 @@ const Situation = () => {
 
   const directionProps ={
     leftButton: { callback: null, title: null, content: null },
-    rightButton: { callback: ()=>submitSituation(), title: 'Go Emotion Page' }
+    rightButton: { 
+                  callback: ()=>submitSituation(), 
+                  title: 'Go Emotion Page',
+                  url: '/thought-record/create/emotion' 
+                }
   }
 
   return (

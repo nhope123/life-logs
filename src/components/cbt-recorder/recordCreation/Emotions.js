@@ -43,8 +43,8 @@ const Emotions = () => {
   const {setEmotion} = useContext(ThoughtRecordContext)
 
   const directionProps ={
-    leftButton: { callback: null, title: 'Go Back to Situation' },
-    rightButton: { callback: null, title: 'Go Automatic Thought', }
+    leftButton: { callback: null, title: 'Go Back to Situation',url:'/thought-record/create/situation'},
+    rightButton: { callback: null, title: 'Go Automatic Thought',url: '/thought-record/create/automatic-thought'}
   }  
 
   return (

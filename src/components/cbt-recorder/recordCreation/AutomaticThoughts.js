@@ -38,8 +38,8 @@ const AutomaticThoughts = () => {
   }
 
   const directionProps = {
-    leftButton: { callback: null, title: 'Go Back to Emotion' },
-    rightButton: { callback: ()=>processThoughts(), title: 'Go To Evidence', }
+    leftButton: { callback: null, title: 'Go Back to Emotion',url: '/thought-record/create/emotion'},
+    rightButton: { callback: ()=>processThoughts(), title: 'Go To Evidence',url: '/thought-record/create/evidence'  }
   }
 
   /**

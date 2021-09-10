@@ -5,8 +5,8 @@ import { ThoughtRecordContext } from '../contexts/ThoughtRecordContext'
 import Table from '../../auxiliary/Table'
 import SingleInputForm from '../../auxiliary/SingleInputForm'
 import ActiveTableCell from '../../auxiliary/ActiveTableCell'
-import ThoughtSubmission from '../RecordPreview'
 import BackForwardNavigation from '../../auxiliary/BackForwardNavigation'
+import RecordPreview from '../RecordPreview'
 
 const COLUMNS =['Evidence For','Evidence Against','Alternate Thought']
 
@@ -56,7 +56,7 @@ const AlternateThoughts = () => {
                     } 
 
   const directionProps = {
-    leftButton: { callback: null, title: 'Go Back to Evidence' },
+    leftButton: { callback: null, title: 'Go Back to Evidence',url: '/thought-record/create/evidence' },
     rightButton: { callback: ()=> (thoughtList.length >= 1)? openModal(): {}, title: 'Preview Record', }
   }
 
@@ -68,7 +68,7 @@ const AlternateThoughts = () => {
       <Table {...tableProps} /> 
       <SingleInputForm {...{label:'Alternate Thought',callback: updateThoughtList, count: false}} />
       <BackForwardNavigation {...directionProps} />
-      <ThoughtSubmission {...{isOpen: isModalOpen, callback: ()=>setIsModalOpen(!isModalOpen)}} />
+      <RecordPreview {...{isOpen: isModalOpen, callback: ()=>setIsModalOpen(!isModalOpen)}} />
     </section >
   )
 }
