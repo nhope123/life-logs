@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/life-logs/static/css/main.be80601a.chunk.css",
-    "main.js": "/life-logs/static/js/main.a2951a5d.chunk.js",
-    "main.js.map": "/life-logs/static/js/main.a2951a5d.chunk.js.map",
-    "runtime-main.js": "/life-logs/static/js/runtime-main.0ab58dbf.js",
-    "runtime-main.js.map": "/life-logs/static/js/runtime-main.0ab58dbf.js.map",
-    "static/js/2.aa451048.chunk.js": "/life-logs/static/js/2.aa451048.chunk.js",
-    "static/js/2.aa451048.chunk.js.map": "/life-logs/static/js/2.aa451048.chunk.js.map",
-    "static/js/3.68c6168b.chunk.js": "/life-logs/static/js/3.68c6168b.chunk.js",
-    "static/js/3.68c6168b.chunk.js.map": "/life-logs/static/js/3.68c6168b.chunk.js.map",
+    "main.css": "/life-logs/static/css/main.09f86847.chunk.css",
+    "main.js": "/life-logs/static/js/main.22f92e94.chunk.js",
+    "main.js.map": "/life-logs/static/js/main.22f92e94.chunk.js.map",
+    "runtime-main.js": "/life-logs/static/js/runtime-main.f1f5ef04.js",
+    "runtime-main.js.map": "/life-logs/static/js/runtime-main.f1f5ef04.js.map",
+    "static/js/2.53c49673.chunk.js": "/life-logs/static/js/2.53c49673.chunk.js",
+    "static/js/2.53c49673.chunk.js.map": "/life-logs/static/js/2.53c49673.chunk.js.map",
+    "static/js/3.d6a61d48.chunk.js": "/life-logs/static/js/3.d6a61d48.chunk.js",
+    "static/js/3.d6a61d48.chunk.js.map": "/life-logs/static/js/3.d6a61d48.chunk.js.map",
     "index.html": "/life-logs/index.html",
-    "static/css/main.be80601a.chunk.css.map": "/life-logs/static/css/main.be80601a.chunk.css.map",
-    "static/js/2.aa451048.chunk.js.LICENSE.txt": "/life-logs/static/js/2.aa451048.chunk.js.LICENSE.txt",
+    "static/css/main.09f86847.chunk.css.map": "/life-logs/static/css/main.09f86847.chunk.css.map",
+    "static/js/2.53c49673.chunk.js.LICENSE.txt": "/life-logs/static/js/2.53c49673.chunk.js.LICENSE.txt",
     "static/media/afraid-emoji.13caa18b.png": "/life-logs/static/media/afraid-emoji.13caa18b.png",
     "static/media/angry-emoji.590e16a6.png": "/life-logs/static/media/angry-emoji.590e16a6.png",
     "static/media/disgust-emoji.920f8667.png": "/life-logs/static/media/disgust-emoji.920f8667.png",
@@ -20,9 +20,9 @@
     "static/media/surprise-emoji.575c8410.png": "/life-logs/static/media/surprise-emoji.575c8410.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.0ab58dbf.js",
-    "static/js/2.aa451048.chunk.js",
-    "static/css/main.be80601a.chunk.css",
-    "static/js/main.a2951a5d.chunk.js"
+    "static/js/runtime-main.f1f5ef04.js",
+    "static/js/2.53c49673.chunk.js",
+    "static/css/main.09f86847.chunk.css",
+    "static/js/main.22f92e94.chunk.js"
   ]
 }
