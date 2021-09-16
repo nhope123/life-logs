@@ -22,19 +22,27 @@ const SingleInputForm = (props) => {
   }
     
   return (
-    <form onSubmit={event=>submitInput(event)} >
-      {(props.label) && <label htmlFor={'input'}  >{props.label}</label>}
-      <textarea id={'input'}  tabIndex={'0'} name={'input'} value={textInput}
-                required placeholder={'Max 100...'} 
-                onChange={(event)=>{(event.target.value.length <= 100) && 
-                                      setTextInput(event.target.value) 
-                                    }}  />
-      {
-        props.count && (<input type={'number'} min={'0'} max={'100'} tabIndex={'0'} value={rate} step={'5'}
-                             onChange={event => setRate(event.target.value)} />) 
-      }                              
-      <input type={'submit'} tabIndex={'0'} value={'Add'}/>
-    </form >
+    <div className={'single-input'} >
+      <form onSubmit={event=>submitInput(event)} >
+        <div >
+          {(props.label) && <label htmlFor={'input'}  >{props.label}</label>}
+        </div >
+        <div > 
+          <textarea id={'input'}  tabIndex={'0'} name={'input'} value={textInput}
+                    required placeholder={'Max 100...'} 
+                    onChange={(event)=>{(event.target.value.length <= 100) && 
+                                          setTextInput(event.target.value) 
+                                        }}  />
+          <div className={'count-submit'} >
+            {
+              props.count && (<input type={'number'} min={'0'} max={'100'} tabIndex={'0'} value={rate} step={'5'}
+                                  onChange={event => setRate(event.target.value)} />) 
+            }                              
+            <input type={'submit'} tabIndex={'0'} value={'Add'}/>
+          </div>
+        </div >
+      </form >
+    </div>
   )
 }
 

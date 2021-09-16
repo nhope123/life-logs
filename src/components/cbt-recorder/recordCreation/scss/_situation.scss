@@ -1,1 +1,9 @@
 @use '../../../scss/custom' as cus;
+
+.situation{
+  @include cus.flex-layout($direction:column,$justify:evenly);
+  @include cus.section-layout-dimension;
+  @extend .p-4;
+  @extend .p-sm-4;
+
+}

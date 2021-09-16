@@ -1,0 +1,17 @@
+@use '../../scss/custom' as cus;
+
+.single-input{
+  //@extend .border;
+  border: 2px solid green;
+
+  label{
+    @extend .d-block;
+  }
+
+  .count-submit{
+    @include cus.flex-layout($flex: inline-flex, $direction: column, $justify: between);
+
+    border: 2px solid red;
+  }
+
+}

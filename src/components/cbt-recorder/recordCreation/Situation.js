@@ -24,10 +24,10 @@ const Situation = () => {
   }
 
   return (
-    <section >
+    <section className={'situation'} >
       <div >
-        <p >{'Enter a short sentence describing and actual event or thought that is causing\
-               you emotional distress'}
+        <p >
+          {'Short sentence describing an event or thought causing emotional distress'}
         </p>
       </div>
       <div >
