@@ -1,17 +1,42 @@
 @use '../../scss/custom' as cus;
 
 .single-input{
-  //@extend .border;
-  border: 2px solid green;
+
+  @include cus.display-position;
+  @include cus.dimension(100%);
+  @extend .my-2;
+  @extend .p-2;
+  max-width: 300px;
+  background-color: rgba(#2196f3, 0.1);
+  border: 0px solid green;
+  border-radius: 8px;
 
   label{
     @extend .d-block;
+    @extend .mb-1;
+    @extend .text-center;
   }
-
-  .count-submit{
-    @include cus.flex-layout($flex: inline-flex, $direction: column, $justify: between);
-
+  .form-inputs{
+    @include cus.flex-layout($justify: evenly);
+    
     border: 2px solid red;
+
+    textarea{
+      @include cus.dimension(80%, 50px);
+    }
+
+    .rate-submit{
+      @include cus.flex-layout($flex: inline-flex, $direction: column, $justify: between);
+      @extend .position-relative;
+      @include cus.dimension($height: 100%);
+      //border: 2px solid red;
+
+      input{
+        @include cus.display-position;
+        @include cus.dimension(50px);
+      }
+    }
   }
 
+  
 }

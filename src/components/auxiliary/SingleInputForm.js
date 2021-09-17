@@ -27,13 +27,13 @@ const SingleInputForm = (props) => {
         <div >
           {(props.label) && <label htmlFor={'input'}  >{props.label}</label>}
         </div >
-        <div > 
+        <div className={'form-inputs'}> 
           <textarea id={'input'}  tabIndex={'0'} name={'input'} value={textInput}
                     required placeholder={'Max 100...'} 
                     onChange={(event)=>{(event.target.value.length <= 100) && 
                                           setTextInput(event.target.value) 
                                         }}  />
-          <div className={'count-submit'} >
+          <div className={'rate-submit'} >
             {
               props.count && (<input type={'number'} min={'0'} max={'100'} tabIndex={'0'} value={rate} step={'5'}
                                   onChange={event => setRate(event.target.value)} />) 
