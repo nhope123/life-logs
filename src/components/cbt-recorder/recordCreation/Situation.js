@@ -30,9 +30,9 @@ const Situation = () => {
           {'Short sentence describing an event or thought causing emotional distress'}
         </p>
       </div>
-      <div  className={'container-lg'}>
+      {/* <div  className={'container-lg'}> */}
         <SingleInputForm {...{label: 'Situation', callback: setInput, count: false}} />
-      </div>
+      {/* </div> */}
       <BackForwardNavigation {...directionProps} />      
     </section >
   )

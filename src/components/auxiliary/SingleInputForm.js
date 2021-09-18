@@ -38,7 +38,7 @@ const SingleInputForm = (props) => {
               props.count && (<input type={'number'} min={'0'} max={'100'} tabIndex={'0'} value={rate} step={'5'}
                                   onChange={event => setRate(event.target.value)} />) 
             }                              
-            <input type={'submit'} tabIndex={'0'} value={'Add'}/>
+            <input type={'submit'} tabIndex={'0'} value={'Add'} disabled={`${!(textInput.length >1)}`}/>
           </div>
         </div >
       </form >

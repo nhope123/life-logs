@@ -6,8 +6,8 @@
   @include cus.dimension(100%);
   @extend .my-2;
   @extend .p-2;
-  max-width: 300px;
-  background-color: rgba(#2196f3, 0.1);
+  max-width: 400px;
+  background-color: rgba(#2196f3, 0.25);
   border: 0px solid green;
   border-radius: 8px;
 
@@ -19,8 +19,6 @@
   .form-inputs{
     @include cus.flex-layout($justify: evenly);
     
-    border: 2px solid red;
-
     textarea{
       @include cus.dimension(80%, 50px);
     }
@@ -34,6 +32,19 @@
       input{
         @include cus.display-position;
         @include cus.dimension(50px);
+      }
+
+      input[type="submit"]{
+        background-color: cus.$bright-blue;
+        border: 2px solid cus.$bright-blue;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+      }
+
+      input[type="submit"]:active{
+        border: 2px inset cus.$bright-blue;
+
       }
     }
   }
